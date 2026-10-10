@@ -16,7 +16,7 @@
       <button id="openFormBtn">+ Create New Listing</button>
       <button id="viewManagerBtn">Manager Dashboard (<span id="pendingCount">0</span>)</button>
       <button id="Deletealisting">Request Delete a Listing</button>
-    </nav>
+    </nav> 
   </header>
 
   <main>
@@ -41,9 +41,9 @@
   <!-- 4. MODAL FORM FOR SELLER LISTING -->
   <dialog id="listingModal">
     <div>
-      <header>
-        <h3>Create New Listing</h3>
-        <button id="closeModalBtn">&times;</button>
+      <header style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 15px;">
+        <h3 style="margin: 0;">Create New Listing</h3>
+        <button type="button" id="closeModalBtn" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
       </header>
 
       <form id="listingForm">
@@ -52,10 +52,10 @@
           <legend>Seller Information</legend>
           
           <label for="sellerName">Full Name:</label>
-          <input type="text" id="sellerName" name="sellerName" placeholder="e.g., Anshu Sharma" required>
+          <input type="text" id="sellerName" name="sellerName" placeholder="e.g., Rohan Kumar" required>
 
-          <label for="sellerPhoto">Seller Photo URL (or Image Link):</label>
-          <input type="url" id="sellerPhoto" name="sellerPhoto" placeholder="https://..." required>
+          <label for="SellerPhoto">Seller Face image</label><br>
+          <input type="file" id="sellerphotos" name="productPhotos" accept="image/*" multiple required style="width:100%;">
 
           <label for="phone">Phone Number (Calls):</label>
           <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required>
@@ -74,8 +74,8 @@
           <label for="price">Price (₹):</label>
           <input type="number" id="price" name="price" placeholder="500" min="0" required>
 
-          <label for="productPhoto">Product Image URL:</label>
-          <input type="url" id="productPhoto" name="productPhoto" placeholder="https://..." required>
+          <label for="productPhotos">Product Images (Select multiple):</label><br>
+          <input type="file" id="productPhotos" name="productPhotos" accept="image/*" multiple required style="width:100%;">
 
           <label for="usage">Usage / Condition:</label>
           <select id="usage" name="usage" required>
@@ -99,6 +99,8 @@
       </form>
     </div>
   </dialog>
+<script src="Marketplace_Project.js">
 
+</script>
 </body>
 </html>
