@@ -254,10 +254,12 @@ function render() {
 
   // Hero stats
   const sellers = new Set(approved.map(l => l.phone)).size;
-  const avg = approved.length ? Math.round(approved.reduce((s, l) => s + Number(l.price), 0) / approved.length) : 0;
+ const lowest = approved.length ? Math.min(...approved.map(l => Number(l.price))) : 0;
+
+countTo($('statLowest'), lowest);
   countTo($('statLive'), approved.length);
   countTo($('statSellers'), sellers);
-  countTo($('statAvg'), avg);
+ countTo($('statLowest'), lowest);
 
   // Live feed with search, filter, sort
   const q = searchInput.value.toLowerCase().trim();
